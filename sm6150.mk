@@ -123,6 +123,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.memtrack-service
 
+PRODUCT_PACKAGES += \
+    hwcomposer.sm6150
+
 
 PRODUCT_PACKAGES += \
     disable_configstore
