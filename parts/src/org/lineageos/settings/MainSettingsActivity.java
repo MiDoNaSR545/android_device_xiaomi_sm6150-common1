@@ -10,7 +10,7 @@ public class MainSettingsActivity extends CollapsingToolbarBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame, new MainSettingsFragment())
                 .commit();
     }

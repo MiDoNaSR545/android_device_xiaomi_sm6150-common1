@@ -7,7 +7,7 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompatCompat;
 import androidx.preference.SeekBarPreference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
@@ -19,7 +19,7 @@ import org.lineageos.settings.thermal.ThermalSettingsActivity;
 import org.lineageos.settings.utils.FileUtils;
 import org.lineageos.settings.utils.HapticUtils;
 
-public class MainSettingsFragment extends PreferenceFragment implements OnPreferenceChangeListener {
+public class MainSettingsFragment extends PreferenceFragmentCompat implements OnPreferenceChangeListener {
 
     private static final String PREF_CLEAR_SPEAKER_SETTINGS = "clear_speaker_settings";
     private static final String PREF_KCAL_SETTINGS = "kcal_settings";
@@ -35,7 +35,7 @@ public class MainSettingsFragment extends PreferenceFragment implements OnPrefer
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.xiaomiparts);
+        setPreferencesFromResource(R.xml.xiaomiparts, rootKey);
 
         mClearSpeakerSettingsPref = (Preference) findPreference(PREF_CLEAR_SPEAKER_SETTINGS);
         mClearSpeakerSettingsPref.setOnPreferenceClickListener(preference -> {

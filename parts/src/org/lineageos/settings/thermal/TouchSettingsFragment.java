@@ -18,14 +18,14 @@ package org.lineageos.settings.thermal;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompatCompat;
 import androidx.preference.PreferenceManager;
 import androidx.preference.SwitchPreference;
 
 import org.lineageos.settings.R;
 import org.lineageos.settings.widget.SeekBarPreference;
 
-public class TouchSettingsFragment extends PreferenceFragment
+public class TouchSettingsFragment extends PreferenceFragmentCompat
         implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private SharedPreferences mSharedPrefs;
@@ -38,7 +38,7 @@ public class TouchSettingsFragment extends PreferenceFragment
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.touch_settings);
+        setPreferencesFromResource(R.xml.touch_settings, rootKey);
         mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
 
         Bundle bundle = getArguments();

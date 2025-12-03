@@ -25,7 +25,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompatCompat;
 import android.widget.CompoundButton;
 
 import com.android.settingslib.widget.MainSwitchPreference;
@@ -34,7 +34,7 @@ import org.lineageos.settings.R;
 
 import java.io.IOException;
 
-public class ClearSpeakerFragment extends PreferenceFragment implements CompoundButton.OnCheckedChangeListener {
+public class ClearSpeakerFragment extends PreferenceFragmentCompat implements CompoundButton.OnCheckedChangeListener {
 
     private static final String TAG = "ClearSpeakerFragment";
     private static final String PREF_CLEAR_SPEAKER = "clear_speaker_pref";
@@ -46,7 +46,7 @@ public class ClearSpeakerFragment extends PreferenceFragment implements Compound
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.clear_speaker_settings);
+        setPreferencesFromResource(R.xml.clear_speaker_settings, rootKey);
 
         mClearSpeakerPref = findPreference(PREF_CLEAR_SPEAKER);
         mClearSpeakerPref.addOnSwitchChangeListener(this);
